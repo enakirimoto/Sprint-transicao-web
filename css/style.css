@@ -1,0 +1,96 @@
+body {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+
+.banner {
+    height: 100vh;
+    padding: 0px;
+}
+
+.banner img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nextPage {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.previousPage {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.circulo {
+    background-color: #CCCCCC;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.arrow {
+    width: 24px;
+    height: 24px;
+}
+
+.regras {
+    height: 100vh;
+    display: flex;
+    background-color: #D0D0D0;
+}
+
+.regras .contentBox {
+    width: 100%;
+    padding: 50px;
+    background-color: #C0C0C0;
+}
+
+.regras .imgBox {
+    width: 100%;
+    background: url(../images/Mole.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tabuleiro {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00FF00;
+}
+
+.gramado {
+    width: 536px;
+    height: 536px;
+    background-color: #008000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    cursor: url(../images/hammer.png), crosshair;
+    padding: 0px;
+}
