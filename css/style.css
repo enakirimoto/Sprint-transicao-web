@@ -94,3 +94,23 @@ body {
     cursor: url(../images/hammer.png), crosshair;
     padding: 0px;
 }
+
+.gramado img {
+    padding: 25px 50px 25px 50px;
+    box-sizing: content-box;
+    width: 76px;
+    height: 61px;
+}
+
+.pontos {
+    width: 536px;
+    height: 536px;
+    display: flex;
+    justify-content: center;
+}
+
+.pontos th {
+    font-size: 50px;
+    font-family: 'Bungee Spice', sans-serif;
+    text-align: center;
+}
