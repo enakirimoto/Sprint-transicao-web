@@ -79,3 +79,26 @@ function mostraPontuacao() {
     mostraPontuacaoDe('errados',errados);
     mostraPontuacaoDe('saldo', Math.max(acertos -perdidos - errados, 0));
 }
+
+function mostraPontuacaoDe(display, valor){
+    let objCentena = document.getElementById(display).firstChild;
+    let objDezena = centena.nextSibling;
+    let objUnidade = dezena.nextSibling;
+
+    //calcula o valor de cada algarismo
+
+    let centena = parseInt(valor/100);
+    let dezena = parseInt((valor/10)%10);
+    let unidade = parseInt(valor%10);
+
+    ///muda a imagem e o valor do atributo para o ledor a tela
+
+    objCentena.src = 'images/caractere_' + centena + '.gif';
+    objCentena.alt = centena;
+    objDezena.src = 'images/caractere_' + dezena + '.gif';
+    objDezena.alt = dezena;
+    objUnidade.src = 'images/caractere_' + unidade + '.gif';
+    objUnidade.alt = unidade;
+}
+
+
