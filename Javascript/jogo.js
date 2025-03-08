@@ -20,36 +20,20 @@ var janela = 2000;
 var timer = null;
 
 
-//document.getElementById("idyButton").addEventListener("click", minhaFuncao);
-
-//var botao = document.getElementById("idyButton");
-
-//botao.addEventListener("click", trataClick);
-
-//document.getElementById("idButton").addEventListener("click", trataClick);
 
 
 onload = function () {
-    document.getElementById("start").addEventListener("click", start);
-    document.getElementById("idGramado").addEventListener("mousedown", marteloBaixo);
-    document.getElementById("idGramado").addEventListener("mousedown", marteloCima);
-    document.getElementById("buraco0").addEventListener("click", martelada);
-    document.getElementById("buraco1").addEventListener("click", martelada);
-    document.getElementById("buraco2").addEventListener("click", martelada);
-    document.getElementById("buraco3").addEventListener("click", martelada);
-    document.getElementById("buraco4").addEventListener("click", martelada);
+    document.getElementById("start").addEventListener('click', start);
+    document.getElementById("idGramado").addEventListener('mousedown', marteloBaixo);
+    document.getElementById("idGramado").addEventListener('mouseup', marteloCima);
+    document.getElementById("buraco0").addEventListener('click', martelada);
+    document.getElementById("buraco1").addEventListener('click', martelada);
+    document.getElementById("buraco2").addEventListener('click', martelada);
+    document.getElementById("buraco3").addEventListener('click', martelada);
+    document.getElementById("buraco4").addEventListener('click', martelada);
 }
 
-//window.onload = function () {
-//    document.getElementById("start").addEventListener("click", start);
-//    document.getElementById("idGramado").addEventListener("mousedown", marteloBaixo);
-//    document.getElementById("idGramado").addEventListener("mousedown", marteloCima);
-//    document.getElementById("buraco0").addEventListener("click", martelada);
-//    document.getElementById("buraco1").addEventListener("click", martelada);
-//    document.getElementById("buraco2").addEventListener("click", martelada);
-//    document.getElementById("buraco3").addEventListener("click", martelada);
-//    document.getElementById("buraco4").addEventListener("click", martelada);
-//}
+
 
 function start() {
     var botao = document.getElementById("start");
@@ -75,6 +59,7 @@ function tiraToupeira(buraco) {
     mostraPontuacao();
 }
 
+
 function mostraPontuacao() {
     mostraPontuacaoDe('acertos',acertos);
     mostraPontuacaoDe('perdidos',perdidos);
@@ -90,8 +75,8 @@ function mostraPontuacaoDe(display, valor){
     //calcula o valor de cada algarismo
 
     let centena = parseInt(valor/100);
-    let dezena = parseInt((valor/10)%10);
-    let unidade = parseInt(valor%10);
+    let dezena = parseInt((valor/10) % 10);
+    let unidade = parseInt(valor % 10);
 
     ///muda a imagem e o valor do atributo para o ledor a tela
 
@@ -103,14 +88,7 @@ function mostraPontuacaoDe(display, valor){
     objUnidade.alt = unidade;
 }
 
-/**
-<div class = "gramado" id ="idGramado">
-    <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco0">
-    <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco1">
-    <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco2">
-    <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco3">
-    <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco4">
-</div>*/
+
 
 function marteloBaixo() {
     document.getElementById("idGramado").style.cursor = 'url(images/hammerDown.png), default';
@@ -141,5 +119,6 @@ function martelada(evento) {
         errados++;
         
     }
+    
     mostraPontuacao();
 }

@@ -88,7 +88,6 @@ body {
     background-color: #008000;
     display: flex;
     align-items: center;
-    justify-content: center;
     justify-content: space-around;
     flex-wrap: wrap;
     cursor: url(../images/hammer.png), crosshair;
@@ -132,11 +131,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    justify-content: center;
 
 }
 
 .records table {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
     border-collapse: collapse;
     font-family: 'MedievalSharp', cursive;
 }
@@ -160,9 +161,15 @@ body {
     background-color: #C0C0C0;
 }
 
-.records tr:nth-child(odd) {
+//*.records tr:nth-child(odd) {
     text-align: right;
 }
+*/
+.records td:first-child, td:nth-child(3) {  /* alinha à direita a 1a e a 3a colunas */
+    text-align: right;
+    padding-right: 20px;
+}
+
 
 @media(max-width: 991px) {
     /*Regras */
