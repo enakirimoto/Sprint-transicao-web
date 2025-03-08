@@ -1,8 +1,10 @@
 /** quantidade de acertos*/
 var acertos;
 acertos = 0;
+
 /** quantidade de toupeiras perdidas*/
 var perdidos = 0;
+
 /** quantidade de marteladas erradas*/
 var errados = 0;
 
@@ -18,13 +20,13 @@ var janela = 2000;
 var timer = null;
 
 
-document.getElementById("idyButton").addEventListener("click", minhaFuncao);
+//document.getElementById("idyButton").addEventListener("click", minhaFuncao);
 
-var botao = document.getElementById("idyButton");
+//var botao = document.getElementById("idyButton");
 
-botao.addEventListener("click", trataClick);
+//botao.addEventListener("click", trataClick);
 
-document.getElementById("idButton").addEventListener("click", trataClick);
+//document.getElementById("idButton").addEventListener("click", trataClick);
 
 
 onload = function () {
@@ -38,21 +40,21 @@ onload = function () {
     document.getElementById("buraco4").addEventListener("click", martelada);
 }
 
-window.onload = function () {
-    document.getElementById("start").addEventListener("click", start);
-    document.getElementById("idGramado").addEventListener("mousedown", marteloBaixo);
-    document.getElementById("idGramado").addEventListener("mousedown", marteloCima);
-    document.getElementById("buraco0").addEventListener("click", martelada);
-    document.getElementById("buraco1").addEventListener("click", martelada);
-    document.getElementById("buraco2").addEventListener("click", martelada);
-    document.getElementById("buraco3").addEventListener("click", martelada);
-    document.getElementById("buraco4").addEventListener("click", martelada);
-}
+//window.onload = function () {
+//    document.getElementById("start").addEventListener("click", start);
+//    document.getElementById("idGramado").addEventListener("mousedown", marteloBaixo);
+//    document.getElementById("idGramado").addEventListener("mousedown", marteloCima);
+//    document.getElementById("buraco0").addEventListener("click", martelada);
+//    document.getElementById("buraco1").addEventListener("click", martelada);
+//    document.getElementById("buraco2").addEventListener("click", martelada);
+//    document.getElementById("buraco3").addEventListener("click", martelada);
+//    document.getElementById("buraco4").addEventListener("click", martelada);
+//}
 
 function start() {
     var botao = document.getElementById("start");
-    botao.disabled = true;
     botao.removeEventListener("click", start);
+    botao.disabled = true;
     sobeToupeira();
 
 }
@@ -60,7 +62,7 @@ function start() {
 function sobeToupeira() {
     var buraco = Math.floor(Math.random() * 5);
     var objBuraco = document.getElementById("buraco" + buraco);
-    objBuraco.src = "images/hole_open.png";
+    objBuraco.src = "images/hole-mole.png";
     timer = setTimeout(tiraToupeira, janela, buraco);
     setTimeout(sobeToupeira, intervalo);
 
@@ -82,8 +84,8 @@ function mostraPontuacao() {
 
 function mostraPontuacaoDe(display, valor){
     let objCentena = document.getElementById(display).firstChild;
-    let objDezena = centena.nextSibling;
-    let objUnidade = dezena.nextSibling;
+    let objDezena = objCentena.nextSibling;
+    let objUnidade = objDezena.nextSibling;
 
     //calcula o valor de cada algarismo
 
@@ -101,18 +103,19 @@ function mostraPontuacaoDe(display, valor){
     objUnidade.alt = unidade;
 }
 
+/**
 <div class = "gramado" id ="idGramado">
     <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco0">
     <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco1">
     <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco2">
     <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco3">
     <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco4">
-</div>
+</div>*/
 
 function marteloBaixo() {
     document.getElementById("idGramado").style.cursor = 'url(images/hammerDown.png), default';
 }
-
+/**
 <div class = "gramado" id ="idGramado">
     <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco0">
     <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco1">
@@ -120,7 +123,7 @@ function marteloBaixo() {
     <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco3">
     <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco4">
 </div>
-
+*/
 function marteloCima() {
     document.getElementById("idGramado").style.cursor = 'url(images/hammer.png), default';
 }
