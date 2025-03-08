@@ -101,4 +101,42 @@ function mostraPontuacaoDe(display, valor){
     objUnidade.alt = unidade;
 }
 
+<div class = "gramado" id ="idGramado">
+    <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco0">
+    <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco1">
+    <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco2">
+    <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco3">
+    <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco4">
+</div>
 
+function marteloBaixo() {
+    document.getElementById("idGramado").style.cursor = 'url(images/hammerDown.png), default';
+}
+
+<div class = "gramado" id ="idGramado">
+    <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco0">
+    <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco1">
+    <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco2">
+    <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco3">
+    <img src = "images/hole.png" alt="buraco vazio" class="hole" id="buraco4">
+</div>
+
+function marteloCima() {
+    document.getElementById("idGramado").style.cursor = 'url(images/hammer.png), default';
+}
+
+function martelada(evento) {
+    if (evento.target.src.includes("hole-mole")) {
+        //acertou
+        acertos++;
+        evento.target.src = "images/hole.png";
+        clearTimeout(timer);
+
+    }
+    else {
+        //errou
+        errados++;
+        
+    }
+    mostraPontuacao();
+}
